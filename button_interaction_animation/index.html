@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button_interaction_animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Practice</h1>
+    <form id="form">
+        <div class="form_control">
+            <label for="first-name" id="label-first-name">First-Name:- &nbsp;</label><input type="text" 
+                placeholder="Enter of First Name" />
+            <label for="last-name" id="label-last-name">Last-Name:-&nbsp;</label><input type="text" 
+                placeholder="Enter of Last Name" />
+            <label for="email" id="label-email">E-mail:-&nbsp;</label><input type="text" 
+                placeholder="Enter your E-mail Address" />
+            <div>
+                <!-- Gender -->
+                <p>Gender:- </p>
+                <label for="male" id="gender-male"></label><input type="radio"  name="gender">Male<br>
+                <label for="female" id="gender-female"></label><input type="radio"  name="gender">Female
+            </div>
+            <!-- nationality  -->
+            <p>Nationality:- </p>
+            <select name="nationality" id="origin">
+                <option>--NONE--</option>
+                <option>Indian</option>
+                <option>American</option>
+                <option>African</option>
+                <option>Europian</option>
+            </select>
+
+            <br>
+            <!-- date of birth  -->
+
+            <label for="DOB" id="label-dob">Date of Birth:- </label><input type="date"  />
+
+            <br>
+            <!-- select your role -->
+
+            <label for="role" id="label-role">What better describes you:-</label>
+            <select name="role" id="role">
+                <option value="Student"></option>
+                <option value="Student">Student</option>
+                <option value="Intern">Intern</option>
+                <option value="Professional">Professional</option>
+                <option value="others">Others</option>
+            </select>
+            <button class="button">
+                <span class="text">SUBMIT</span>
+            </button>
+        </div>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+/* styling the body of survey form  */
+body {
+    background-color: #05c46b;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+ 
+#form {
+    background-color: #fff;
+    max-width: 500px;
+    margin: 50px auto;
+    box-shadow: 15px 15px 15px rgb(19, 254, 211);
+    padding: 30px 20px;
+ }
+ h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+    color: black;
+ }
+ /* styling form_control class  */
+.form_control {
+    text-align: left;
+    margin-bottom: 25px;
+ }
+ /* styling form_control label  */
+ .form_control label {
+ display: block;
+    margin-bottom: 10px;
+ }
+ 
+ /* styling form_control input select text-area  */
+ .form_control input,
+ .form_control select,
+ .form_control textarea {
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    padding: 10px;
+    width: 95%;
+ }
+ 
+ /* styling .form_control radio checkbox  */
+ .form_control input[type="radio"],
+ .form_control input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+ }
+ 
+ /* styling button  */
+.button{
+    position: relative;
+    width: 70px;
+    height: 30px;
+    font-size: 10px;
+    background-color: #202231;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: width .5s;
+    border-radius: .5s;
+}
+.button *{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .25s;
+}
+.button:focus{
+    width: 30px;
+    background-color: #44c08a;
+    border-radius: 50%;
+}
+.button:focus .text{
+    opacity: 0;
+}

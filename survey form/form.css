@@ -1,0 +1,74 @@
+/* styling the body of survey form  */
+body {
+   background-color: #05c46b;
+   text-align: center;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* styling the form (color, padding, margin, etc)  */
+#form {
+   background-color: #fff;
+   max-width: 500px;
+   margin: 50px auto;
+   box-shadow: 15px 15px 15px rgb(19, 254, 211);
+   padding: 30px 20px;
+}
+
+h1 {
+   text-align: center;
+   text-decoration: underline;
+   font-size: 50px;
+   color: black;
+   text-shadow: 10px 10px 10px rgb(0, 255, 242);
+}
+
+
+/* styling form-control class  */
+.form-control {
+   text-align: left;
+   margin-bottom: 25px;
+}
+
+/* styling form-control label  */
+.form-control label {
+   display: block;
+   margin-bottom: 10px;
+}
+
+/* styling form-control input select text-area  */
+.form-control input,
+.form-control select,
+.form-control textarea {
+   border: 1px solid grey;
+   border-radius: 5px;
+   margin-bottom: 10px;
+   font-family: inherit;
+   padding: 10px;
+   width: 95%;
+}
+
+/* styling .form-control radio checkbox  */
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+   display: inline-block;
+   width: auto;
+}
+
+/* styling button  */
+button {
+   background-color: #05c46b;
+   padding: 5px;
+   width: 100%;
+   font-family: inherit;
+   font-size: 21px;
+   margin-top: 50px;
+   margin-bottom: 20px;
+   display: block;
+}
+
+button:hover {
+   background-color: rgb(13, 255, 0);
+   color: black;
+}
+

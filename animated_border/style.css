@@ -1,0 +1,15 @@
+.container {
+    background: linear-gradient(to right, var(--colorful-lights));
+    width: 250px;
+    height: 90px;
+    border-radius: 15px;
+    position: relative;
+    z-index: 999;
+    animation: colorfulLights 2s linear infinite;
+}
+
+@keyframes colorfulLights {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}

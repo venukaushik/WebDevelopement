@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    
+
+    <!-- survey information content  -->
+
+    <h1>Survey</h1>
+    <form id="form">
+        <div class="form-control">
+
+            <label for="first-name" id="label-first-name">First-Name:- &nbsp;</label><input type="text" required
+                placeholder="Enter of First Name" />
+            <label for="last-name" id="label-last-name">Last-Name:-&nbsp;</label><input type="text" required
+                placeholder="Enter of Last Name" />
+            <label for="email" id="label-email">E-mail:-&nbsp;</label><input type="text" required
+                placeholder="Enter your E-mail Address" />
+            <div>
+                <!-- Gender -->
+                <p>Gender:- </p>
+                <label for="male" id="gender-male"></label><input type="radio" required name="gender">Male<br>
+                <label for="female" id="gender-female"></label><input type="radio" required name="gender">Female
+            </div>
+            <!-- nationality  -->
+            <p>Nationality:- </p>
+            <select name="nationality" id="origin">
+                <option>--NONE--</option>
+                <option>Indian</option>
+                <option>American</option>
+                <option>African</option>
+                <option>Europian</option>
+            </select>
+
+
+            <!-- date of birth  -->
+
+            <label for="DOB" id="label-dob">Date of Birth:- </label><input type="date" required />
+
+            <!-- select your role -->
+
+            <label for="role" id="label-role">What better describes you:-</label>
+            <select name="role" id="role">
+                <option value="Student"></option>
+                <option value="Student">Student</option>
+                <option value="Intern">Intern</option>
+                <option value="Professional">Professional</option>
+                <option value="others">Others</option>
+            </select>
+            <label>Would You recommend GeeksforGeeks to your Friend?</label><br>
+            <label for="recommend-1">
+                <input type="radio" id="recommend-1" name="recommend">YES</input>
+            </label><br>
+            <label for="recommend-2">
+                <input type="radio" id="recommend-2" name="recommend">NO</input>
+            </label><br>
+            <label for="recommend-3">
+                <input type="radio" id="recommend-3" name="recommend">Maybe</input>
+            </label><br>
+            <p>
+                <!-- languages known  -->
+                <label for="languages" id="languages">What Languages Do you know?</label>
+
+                <label for="lan-1"><input type="checkbox" name="lan">C</label>
+                <label for="lan-2"><input type="checkbox" name="lan">C++</label>
+                <label for="lan-3"><input type="checkbox" name="lan">Java</label>
+                <label for="lan-4"><input type="checkbox" name="lan">Python</label>
+                <label for="lan-5"><input type="checkbox" name="lan">JavaScript</label>
+                <label for="lan-6"><input type="checkbox" name="lan">React</label>
+                <label for="lan-7"><input type="checkbox" name="lan">Angular</label>
+            </p>
+
+            <!-- comments -->
+            <div class="comment">
+                <label for="comment">
+                    Any comments or suggestion:-
+                    <textarea name="comments" id="comments" required cols="30" rows="1"
+                        placeholder="Write your comment"></textarea>
+                </label>
+                <button type="submit">SUBMIT</button>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
