@@ -1,0 +1,21 @@
+h1 {
+    font-size: 3em;
+    letter-spacing: 3px;
+    font-size: bold;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url('aint1f.webp');
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text 7.5s linear infinte;
+}
+
+@keyframes text {
+    from {
+        background-position: 0% 50%;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
+
+}
