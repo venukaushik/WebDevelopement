@@ -319,7 +319,7 @@ sidebar.querySelectorAll('.profile').forEach(button => wrap(button, () => {
 
 function wrap(button, callback) {
     button.addEventListener('click', e => {
-        if(sidebar.animating || button.classList.contains('active')) {
+        if (sidebar.animating || button.classList.contains('active')) {
             return;
         }
         sidebar.animating = button
@@ -327,7 +327,7 @@ function wrap(button, callback) {
         sidebar.querySelectorAll('button.active').forEach(active => {
             active.classList.remove('active')
             active.removeAttribute('style')
-            if(active.querySelector('.corner')) {
+            if (active.querySelector('.corner')) {
                 set(active.querySelector('.corner'), {
                     morphSVG: 'M5.5 3L12 3.01L18.5 3V3.01H5.5V3Z'
                 })
@@ -342,3 +342,4 @@ function wrap(button, callback) {
 
     })
 }
+
