@@ -1,0 +1,140 @@
+/* VARIABLES -  START */
+/* COLORS  */
+$bg: #e0f7fa;
+$dark: #52d7df;
+$light: #c9f1ef;
+$button-bg: white;
+/* DIMENSIONS */
+$button-dim: 150px;
+/* FONTS */
+
+// $theme-font: "Lato", sans-serif;
+/* VARIABLES - END */
+/* COMMONS - START */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* COMMONS - END */
+/* STYLES -  START */
+.wrapper {
+    @extend .flex-center;
+    background-color: $bg;
+
+    .button {
+        height: $button-dim;
+        width: $button-dim;
+        background-color: $button-bg;
+        border-radius: 20px;
+        cursor: pointer;
+        box-shadow: 0px 0px 15px darken($bg, 10%);
+        position: relative;
+
+        &:active {
+            animation: click 0.1s 2 linear alternate;
+        }
+
+        #small-curve,
+        #dark-line {
+            stroke: $dark;
+            stroke-width: 8px;
+        }
+
+        #large-curve,
+        #light-line {
+            stroke: $light;
+            stroke-width: 6px;
+        }
+
+        #dark-line,
+        #light-line {
+            opacity: 0;
+            stroke-width: 6px;
+        }
+
+        .mute {
+            position: absolute;
+            z-index: 10;
+            width: 100px;
+            height: 100px;
+            top: 25px;
+            right: 10px;
+        }
+
+        .curve-small,
+        .curve-large {
+            position: absolute;
+            z-index: 10;
+            width: 100px;
+            height: 100px;
+        }
+
+        .curve-small {
+            top: 42px;
+            right: -10px;
+        }
+
+        .curve-large {
+            top: 15px;
+            right: -2px;
+        }
+
+        .speaker {
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            border-radius: 5px;
+            border: 25px solid;
+            border-color: transparent $dark transparent transparent;
+            top: 40px;
+            left: 5px;
+
+            &:after {
+                content: "";
+                height: 22px;
+                width: 15px;
+                background-color: $dark;
+                position: absolute;
+                top: 0;
+                left: 8px;
+                border-radius: 2px 0 0 2px;
+            }
+        }
+    }
+}
+
+svg path {
+    fill: none;
+
+    stroke-dasharray: 1000;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* STYLES - END */
+/* ANIMATIONS - START */
+@keyframes click {
+    100% {
+        transform: scale(0.9, 0.9);
+    }
+}
+
+@keyframes large-curve {
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ANIMATIONS - END */

@@ -1,0 +1,55 @@
+body {
+    background: #111;
+}
+
+.wrapper {
+    width: 100px;
+    margin: auto;
+    position: relative;
+    top: 200px;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background: #eee;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -10px 30px rgba(0, 10, 30, 0.3) inset;
+}
+
+.xbox {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100px;
+    height: 60px;
+    webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    box-shadow: inset 0 10px 10px #2d2, inset 0px 15px 0 #2c2;
+    -webkit-transform: rotate(-45deg);
+}
+
+.xbox-1 {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 100px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: inset 0 10px 10px #2d2, inset 0px 15px 0 #2c2;
+}
+
+.title {
+    text-align: center;
+    font: normal 36pt sans-serif;
+    color: #2d2;
+}

@@ -1,0 +1,455 @@
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+button {
+    border: 0;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 1em;
+    align-items: center;
+    padding: 1em 1.5em;
+    height: 1em;
+    line-height: 1.2em;
+    box-sizing: content-box;
+    color: white;
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 1px solid white;
+    font-family: inherit;
+    transition: all 0.6s ease-in-out;
+}
+
+button.active {
+    color: red;
+    background-color: white;
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.preloader {
+    font-size: 2em;
+}
+
+.preloader__ball {
+    display: flex;
+    position: relative;
+    width: 1em;
+}
+
+.preloader__ball:after,
+.preloader__ball .ball {
+    content: '';
+    display: flex;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+}
+
+.preloader__ball .ball {
+    background-color: white;
+}
+
+.preloader__ball:after {
+    position: absolute;
+    z-index: -1;
+    background-color: black;
+    bottom: 0;
+    left: 50%;
+    opacity: 0.25;
+    transform: translate(-50%, 0.5em) rotateX(70deg) scale(1);
+}
+
+.preloader--bounce .preloader__ball {
+    height: 5em;
+}
+
+.preloader--bounce .preloader__ball .ball {
+    transform-origin: 50% 100%;
+    animation: bounceBall 0.9s cubic-bezier(0, 0, 0.15, 1.01) infinite;
+}
+
+.preloader--bounce .preloader__ball:after {
+    opacity: 0.25;
+    transform: translate(-50%, 0.5em) rotateX(70deg) scale(0.9);
+    animation: bounceBallShadow 0.9s linear infinite;
+}
+
+.preloader--bounce .preloader__ball.end:after {
+    animation: none;
+    opacity: 0;
+}
+
+.preloader--bounce .preloader__ball.end .ball {
+    animation: bounceBallExplode 0.9s linear forwards;
+}
+
+.preloader--pendulum {
+    display: flex;
+    align-items: center;
+}
+
+.preloader--pendulum .preloader__ball {
+    height: 2em;
+}
+
+.preloader--pendulum .preloader__ball:last-child:after,
+.preloader--pendulum .preloader__ball:first-child:after,
+.preloader--pendulum .preloader__ball:last-child .ball,
+.preloader--pendulum .preloader__ball:first-child .ball {
+    animation: 1.8s cubic-bezier(0, 0, 0.15, 1.01) infinite;
+}
+
+.preloader--pendulum .preloader__ball:last-child .ball,
+.preloader--pendulum .preloader__ball:first-child .ball {
+    transform-origin: 50% -2em;
+}
+
+.preloader--pendulum .preloader__ball:first-child .ball {
+    animation-name: pendulumBallLeft;
+}
+
+.preloader--pendulum .preloader__ball:first-child:after {
+    animation-name: pendulumBallLeftShadow;
+}
+
+.preloader--pendulum .preloader__ball:last-child .ball {
+    animation-name: pendulumBallRight;
+}
+
+.preloader--pendulum .preloader__ball:last-child:after {
+    animation-name: pendulumBallRightShadow;
+}
+
+.preloader--progress {
+    position: relative;
+    height: 0.2em;
+    width: 0;
+    border-radius: 0.2em;
+    transition: width 0.6s cubic-bezier(0.79, -0.33, 0.21, 1.37);
+    background-color: white;
+    box-shadow: 0 0.95em 0 -0.05em #bf4c4a;
+}
+
+.preloader--progress:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(#bf3e47 0, #bf3e47 100%);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.2em;
+    transition: background 1.8s cubic-bezier(0, 0, 0.15, 1.01);
+    transition-delay: 0.324s;
+}
+
+.preloader--progress .preloader__ball {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, calc(-50% - 0.05em));
+}
+
+.preloader--progress .preloader__ball .ball {
+    background-color: white;
+    transform: scale(0);
+}
+
+.preloader--progress .preloader__ball:after {
+    opacity: 1;
+    background-color: #bf4c4a;
+    transform: translate(-50%, 1em) rotateX(70deg) scale(0);
+}
+
+.preloader--progress .preloader__ball.active {
+    animation: preloaderProgressBallMove 1.8s cubic-bezier(0, 0, 0.15, 1.01) forwards;
+}
+
+.preloader--progress .preloader__ball.active .ball {
+    animation: preloaderProgressBall 1.8s linear forwards;
+}
+
+.preloader--progress .preloader__ball.active:after {
+    animation: preloaderProgressBallShadow 1.8s linear forwards;
+}
+
+.preloader--progress .preloader__ball.explode {
+    left: 100%;
+}
+
+.preloader--progress .preloader__ball.explode:after {
+    transform: translate(-50%, 1em) rotateX(70deg) scale(1);
+    animation: preloaderProgressBallShadowExplode 1.8s linear forwards;
+    animation-delay: 0.6s;
+}
+
+.preloader--progress .preloader__ball.explode .ball {
+    transform: scale(1);
+    animation: preloaderProgressBallExplode 1.8s linear forwards;
+    animation-delay: 0.6s;
+}
+
+.preloader--progress.active {
+    width: 3em;
+}
+
+.preloader--progress.loading:before {
+    background-size: 100% 100%;
+}
+
+.preloader--progress__status {
+    position: absolute;
+    min-width: 1em;
+    min-height: 1em;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 0.05em));
+    transition: all 2.25s ease-in-out;
+    opacity: 0;
+}
+
+.preloader--progress__status--item {
+    transition: all 2.25s ease-in-out;
+}
+
+.preloader--progress__status.active {
+    animation: statusJump 0.72s cubic-bezier(0, 0, 0.15, 1.01) 0.72s forwards;
+}
+
+.preloader--progress__status.active .preloader--progress__status--item {
+    stroke-width: 0.1em;
+    transform: rotateY(360deg);
+}
+
+.preloader--progress__status.hide .preloader--progress__status--item {
+    opacity: 0;
+}
+
+@keyframes bounceBallShadow {
+    50% {
+        opacity: 0.1;
+        transform: translate(-50%, 0.5em) rotateX(70deg) scale(0.2);
+    }
+}
+
+@keyframes bounceBall {
+
+    0%,
+    100% {
+        transform: translate(0, 1em) scaleY(1) scaleX(1);
+    }
+
+    50% {
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        transform: translate(0, 0) scaleY(1) scaleX(1);
+    }
+
+    96% {
+        animation-timing-function: cubic-bezier(0, 0, 0.15, 1.01);
+        transform: translate(0, 1em) scaleY(1) scaleX(1);
+    }
+
+    98% {
+        animation-timing-function: cubic-bezier(0, 0, 0.15, 1.01);
+        transform: translate(0, 1em) scaleY(0.8) scaleX(1.2);
+    }
+}
+
+@keyframes bounceBallExplode {
+    0% {
+        transform: translate(0, 1em) scale(1);
+    }
+
+    5% {
+        transform: translate(0, 1em) scale(0.8);
+        opacity: 1;
+    }
+
+    10%,
+    100% {
+        transform: translate(0, 1em) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes pendulumBallLeft {
+    20% {
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        transform: translate(0, 0em) rotate(90deg);
+    }
+
+    100%,
+    50% {
+        transform: translate(0, 0em) rotate(0);
+    }
+}
+
+@keyframes pendulumBallRight {
+    80% {
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        transform: translate(0, 0em) rotate(-90deg);
+    }
+
+    100%,
+    50% {
+        transform: translate(0, 0em) rotate(0);
+    }
+}
+
+@keyframes pendulumBallLeftShadow {
+    20% {
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        opacity: 0.1;
+        transform: translate(-0.5em, 0.5em) rotateX(70deg) scale(0.4);
+    }
+
+    100%,
+    50% {
+        opacity: 0.25;
+        transform: translate(-50%, 0.5em) rotateX(70deg) scale(1);
+    }
+}
+
+@keyframes pendulumBallRightShadow {
+    80% {
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        opacity: 0.1;
+        transform: translate(-0.8em, 0.5em) rotateX(70deg) scale(0.4);
+    }
+
+    100%,
+    50% {
+        opacity: 0.25;
+        transform: translate(-50%, 0.5em) rotateX(70deg) scale(1);
+    }
+}
+
+@keyframes preloaderProgressBall {
+    5% {
+        transform: scale(1.2);
+    }
+
+    10% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.1);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes preloaderProgressBallShadow {
+    5% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(1.2);
+    }
+
+    10% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(1);
+    }
+
+    15% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(1.1);
+    }
+
+    20% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(1);
+    }
+}
+
+@keyframes preloaderProgressBallMove {
+    20% {
+        left: 0;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes preloaderProgressBallExplode {
+    0% {
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    10%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes preloaderProgressBallShadowExplode {
+    0% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(1);
+    }
+
+    5% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(0.8);
+        opacity: 1;
+    }
+
+    10%,
+    100% {
+        transform: translate(-50%, 1em) rotateX(70deg) scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes progressBackground {
+    100% {
+        background-color: blue;
+    }
+}
+
+@keyframes statusJump {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, calc((-50% - 0.05em)));
+    }
+
+    50% {
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        transform: translate(-50%, calc((-50% - 0.05em) * 3));
+    }
+
+    80% {
+        animation-timing-function: cubic-bezier(0, 0, 0.15, 1.01);
+        transform: translate(-50%, calc((-50% - 0.05em)));
+    }
+
+    90% {
+        animation-timing-function: cubic-bezier(0.76, -0.01, 1, 1);
+        transform: translate(-50%, calc((-50% - 0.05em) * 1.5));
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-50%, calc((-50% - 0.05em)));
+    }
+}

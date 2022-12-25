@@ -1,0 +1,131 @@
+/* VARIABLES -  START */
+/* COLORS  */
+/* DIMENSIONS */
+/* FONTS */
+/* VARIABLES - END */
+/* COMMONS - START */
+.flex-center, .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* COMMONS - END */
+/* STYLES -  START */
+.wrapper {
+  background-color: #e0f7fa;
+}
+.wrapper .button {
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 0px 15px #b4ecf3;
+  position: relative;
+}
+.wrapper .button:active {
+  -webkit-animation: click 0.1s 2 linear alternate;
+          animation: click 0.1s 2 linear alternate;
+}
+.wrapper .button #small-curve,
+.wrapper .button #dark-line {
+  stroke: #52d7df;
+  stroke-width: 8px;
+}
+.wrapper .button #large-curve,
+.wrapper .button #light-line {
+  stroke: #c9f1ef;
+  stroke-width: 6px;
+}
+.wrapper .button #dark-line,
+.wrapper .button #light-line {
+  opacity: 0;
+  stroke-width: 6px;
+}
+.wrapper .button .mute {
+  position: absolute;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+  top: 25px;
+  right: 10px;
+}
+.wrapper .button .curve-small,
+.wrapper .button .curve-large {
+  position: absolute;
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+}
+.wrapper .button .curve-small {
+  top: 42px;
+  right: -10px;
+}
+.wrapper .button .curve-large {
+  top: 15px;
+  right: -2px;
+}
+.wrapper .button .speaker {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border-radius: 5px;
+  border: 25px solid;
+  border-color: transparent #52d7df transparent transparent;
+  top: 40px;
+  left: 5px;
+}
+.wrapper .button .speaker:after {
+  content: "";
+  height: 22px;
+  width: 15px;
+  background-color: #52d7df;
+  position: absolute;
+  top: 0;
+  left: 8px;
+  border-radius: 2px 0 0 2px;
+}
+
+svg path {
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* STYLES - END */
+/* ANIMATIONS - START */
+@-webkit-keyframes click {
+  100% {
+    transform: scale(0.9, 0.9);
+  }
+}
+@keyframes click {
+  100% {
+    transform: scale(0.9, 0.9);
+  }
+}
+@-webkit-keyframes large-curve {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes large-curve {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* ANIMATIONS - END *//*# sourceMappingURL=style.css.map */
